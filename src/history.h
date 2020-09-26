@@ -7,10 +7,6 @@ typedef struct history_node_s {
   struct s_Item *next;
 } history_node;
 
-typedef struct s_List {
-  struct s_Item *root;
-} List;
-
 /* Initialize the linked list to keep the history. */
 List* init_history();
 
