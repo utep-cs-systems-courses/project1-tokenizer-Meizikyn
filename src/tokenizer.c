@@ -25,7 +25,13 @@ char *word_start(char *str) {
 }
 
 /* Returns a pointer terminator char following *word */
-char *word_terminator(char *word);
+char *word_terminator(char *word) {
+    char *s = word;
+    for (; *s != '\0'; ++s)
+        if (space_char(*s))
+            return s;
+    return s; // return the null terminator at end of string
+}
 
 /* Counts the number of words in the string argument. */
 int count_words(char *str);
