@@ -8,7 +8,7 @@ typedef struct history_node_s {
 } history_node;
 
 /* Initialize the linked list to keep the history. */
-List* init_history();
+history_node* init_history();
 
 /* Add a history item to the end of the list.
    List* list - the linked list
