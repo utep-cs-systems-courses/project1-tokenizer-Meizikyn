@@ -1,11 +1,11 @@
-#ifndef _HISTORY_
-#define _HISTORY_
+#ifndef _HISTORY_H
+#define _HISTORY_H
 
-typedef struct s_Item {
+typedef struct history_node_s {
   int id;
   char *str;
   struct s_Item *next;
-} Item;
+} history_node;
 
 typedef struct s_List {
   struct s_Item *root;
