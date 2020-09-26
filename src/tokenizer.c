@@ -35,7 +35,14 @@ char *word_terminator(char *word) {
 }
 
 /* Counts the number of words in the string argument. */
-int count_words(char *str);
+int count_words(char *str) {
+    int i=1; // last word
+    for(char *s = str; *s != '\0'; ++s) {
+        if (space_char(*s))
+            ++i;
+    }
+    return i; // will be more robust later
+}
 
 /* Returns a fresly allocated new zero-terminated string
    containing <len> chars from <inStr> */
