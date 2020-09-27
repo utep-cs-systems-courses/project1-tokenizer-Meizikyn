@@ -44,7 +44,7 @@ int count_words(char *str) {
     return i; // will be more robust later
 }
 
-/* Returns a fresly allocated new zero-terminated string
+/* Returns a freshly allocated new zero-terminated string
    containing <len> chars from <inStr> */
 char *copy_str(char *inStr, short len);
 
