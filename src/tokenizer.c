@@ -36,7 +36,7 @@ char *word_terminator(char *word) {
 
 /* Counts the number of words in the string argument. */
 int count_words(char *str) {
-    int i=1; // last word
+    unsigned short i=1; // last word
     for(char *s = str; *s != '\0'; ++s) {
         if (space_char(*s))
             ++i;
@@ -47,7 +47,7 @@ int count_words(char *str) {
 /* Returns a freshly allocated new zero-terminated string
    containing <len> chars from <inStr> */
 char *copy_str(char *inStr, short len) {
-    short c = 0;
+    unsigned short c = 0;
     char *outStr = (char*)malloc(sizeof(char)*len+1);
     for (char *i=inStr, *o=outStr; c < len; ++i, ++o, ++c)
         *o = *i;
@@ -64,7 +64,9 @@ char *copy_str(char *inStr, short len) {
      tokens[2] = "string"
      tokens[3] = 0
 */
-char **tokenize(char* str);
+char **tokenize(char* str) {
+    unsigned short m = count_words(str);
+}
 
 /* Prints all tokens. */
 void print_tokens(char **tokens);
