@@ -78,7 +78,11 @@ char **tokenize(char* str) {
 }
 
 /* Prints all tokens. */
-void print_tokens(char **tokens);
+void print_tokens(char **tokens) {
+    for (char **t = tokens; *t != NULL; ++t)
+        printf("%s\n", *t);
+    return;
+}
 
 /* Frees all tokens and the vector containing themx. */
 void free_tokens(char **tokens);
