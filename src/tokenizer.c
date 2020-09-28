@@ -66,6 +66,15 @@ char *copy_str(char *inStr, short len) {
 */
 char **tokenize(char* str) {
     unsigned short m = count_words(str);
+    char **tokens = (char**)malloc(sizeof(char*)*(m+1));
+    char *l = str, *r = str;
+    for(char **t = tokens; (int)(t-tokens) < m; ++t) {
+        r = word_terminator(l);
+        *t = copy_str(l, (int)(r-l));
+        l = word_start(r);
+    }
+    *(tokens+m) = NULL;
+    return tokens;
 }
 
 /* Prints all tokens. */
